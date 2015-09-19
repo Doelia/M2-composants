@@ -2,23 +2,24 @@ package TP1.objs;
 
 import java.util.HashMap;
 
-
-public class Archive extends Directory implements IArchive
-// classe repr�sentant une archive. (Elle h�rite de Directory car elle poss�de
-// toutes les caract�ristiques d'un dossier : surtout la manipulation de
-// collection qui permet la r�utilisation de m�thodes.
-{
+/**
+ * Classe représentant une archive
+ * Hérite de Directory car elle possède toutes les caractéristiques d'un dossier
+ * Dont la manipulation de collection
+ * @author doelia
+ *
+ */
+public class Archive extends Directory implements IArchive {
+	
 	public Archive(String nom) {
 		super(nom);
 	}
 
 	public HashMap<String, ElementStockage> getContent() {
 		HashMap<String, ElementStockage> map = new HashMap<String, ElementStockage>();
-
 		for (ElementStockage s : listeDossier) {
-			map.put(s.absoluteAdress(), s);
+			map.put(s.getAbsoluteLocation(), s);
 		}
-
 		return map;
 	}
 

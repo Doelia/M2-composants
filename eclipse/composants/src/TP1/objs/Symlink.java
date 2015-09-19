@@ -16,13 +16,13 @@ public class Symlink extends ElementStockage {
 		reference = e;
 	}
 
-	public int size() {
-		return (reference == null) ? 0 :  reference.size();
+	public int getSize() {
+		return (reference == null) ? 0 :  reference.getSize();
 	}
 
 	// affiche le symbole du lien puis l'adresse absoule de sa rfrence
 	public void cat() {
-		System.out.println("ln -s " + reference.absoluteAdress() + " " + name);
+		System.out.println("ln -s " + reference.getAbsoluteLocation() + " " + name);
 	}
 
 	@Override

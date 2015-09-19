@@ -5,11 +5,9 @@ import java.util.Collection;
 
 import TP1.pattern.Visitor;
 
-// classe reprsentant un dossier
 public class Directory extends ElementStockage {
-	Collection<ElementStockage> listeDossier; // collection des lments de
-												// stockage que le dossier
-												// contient
+	
+	Collection<ElementStockage> listeDossier; // Contenu
 
 	public Directory(String nom) {
 		super(nom, 4);
@@ -38,7 +36,7 @@ public class Directory extends ElementStockage {
 
 	// ajoute l'lment e dans le dossier
 	public boolean add(ElementStockage e) {
-		e.nouveauParent(this); // le rpertoire courant devient le pre de l'lment
+		e.setParent(this); // le rpertoire courant devient le pre de l'lment
 		return listeDossier.add(e); // ajout de l'lment e la collection
 	}
 
@@ -70,7 +68,7 @@ public class Directory extends ElementStockage {
 		ArrayList<String> collection = new ArrayList<String>();
 		for (ElementStockage s : listeDossier) {
 			if (s.name.equals(nom))
-				collection.add(s.absoluteAdress());
+				collection.add(s.getAbsoluteLocation());
 		}
 		return collection;
 	}
@@ -84,7 +82,7 @@ public class Directory extends ElementStockage {
 
 		for (ElementStockage s : listeDossier) {
 			if (s.name == nom)
-				collection.add(s.absoluteAdress());
+				collection.add(s.getAbsoluteLocation());
 
 			if (s instanceof Directory) {
 				temporaire = ((Directory) s).findR(nom);

@@ -78,12 +78,12 @@ public class Principale {
 		File f4 = new File("Duval", "duval");
 
 		System.out.println("AVANT" + "\n");
-		System.out.println("taille " + d.name + " : " + d.size());
-		System.out.println("taille " + d2.name + " : " + d2.size());
-		System.out.println("taille " + f.name + " : " + f.size());
-		System.out.println("taille " + f2.name + " : " + f2.size());
-		System.out.println("taille " + f3.name + " : " + f3.size());
-		System.out.println("taille " + f4.name + " : " + f4.size());
+		System.out.println("taille " + d.name + " : " + d.getSize());
+		System.out.println("taille " + d2.name + " : " + d2.getSize());
+		System.out.println("taille " + f.name + " : " + f.getSize());
+		System.out.println("taille " + f2.name + " : " + f2.getSize());
+		System.out.println("taille " + f3.name + " : " + f3.getSize());
+		System.out.println("taille " + f4.name + " : " + f4.getSize());
 
 		d.ls();
 		d2.ls();

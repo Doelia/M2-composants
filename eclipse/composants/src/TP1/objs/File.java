@@ -2,32 +2,37 @@ package TP1.objs;
 
 import TP1.pattern.Visitor;
 
-public class File extends ElementStockage {
-// classe reprsentant un fichier
 
-	private String contenu; // possde un contenu
+/**
+ * Représente un fichier texte
+ * @author doelia
+ *
+ */
+public class File extends ElementStockage {
+
+	private String content; // Contenu
 
 	public File(String nom) {
 		super(nom, 0);
-		this.contenu = "";
+		this.content = "";
 	}
 
 	public File(String nom, String contenu) {
 		super(nom, 0);
-		this.contenu = contenu;
+		this.content = contenu;
 	}
 
 	@Override
-	public int size() {
-		return contenu.length();
+	public int getSize() {
+		return content.length();
 	}
 
 	public void cat() {
-		System.out.println(contenu);
+		System.out.println(content);
 	}
 
 	public void setContents(String c) {
-		contenu = c;
+		content = c;
 	}
 
 	@Override

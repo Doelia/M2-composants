@@ -16,7 +16,7 @@ public class Link extends ElementStockage {
 		this.contenu = contenu;
 	}
 
-	public int size() {
+	public int getSize() {
 		return contenu.length();
 	}
 
