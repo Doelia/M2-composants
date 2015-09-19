@@ -6,7 +6,22 @@ Importer le repertoire **eclise/composants** dans Eclipse (Version Mars)
 
 ## Les designs patterns
 
+### Singleton
+Oblige un objet à n'exister sous une seule instance.
+Doit être vu comme une contrainte et non pas comme un outil.
+
+### Composite
+_Utilisé dans le TP1 (Fichiers/dossiers)_
+
+### Observateur
+
+### Vistor
+_Utlisé dans le TP1 (Fichiers/dossiers)_
+
 ### MVC, Modèle vue controleur
+
+Est une combinaison des patrons **Observateur**, **Stratégie** et **Composite**, qui forme ainsi un patron d'architecture
+
 Sépare les données, les traitements et l'affichage.
 - **Modele** : Représente les données, effectue les accès à la base (composant)
 - **Controleur** : Gère les évenements (input), demande les appels à la vue
@@ -18,4 +33,3 @@ D'après le patron de conception **observateur/observable**, la vue est un « ob
 
 
 ## TP1
-
