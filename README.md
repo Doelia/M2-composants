@@ -33,7 +33,7 @@ Des objets **Observer** (ayant une mèthode onNotify()) se connectent à un **Ob
 ### Vistor
 _Utlisé dans le TP1 (Fichiers/dossiers)_
 
-Permet de séparer un algorithme d'une structure de données.
+Permet d'obtenir le même effet que d'ajouter une nouvelle méthode virtuelle à un ensemble de classe qui ne le permet pas.
 
 <a href="https://fr.wikipedia.org/wiki/Visiteur_(patron_de_conception)">
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Visitorpattern.png" width="500" >
@@ -56,3 +56,5 @@ D'après le patron de conception **observateur/observable**, la vue est un « ob
 
 
 ## TP1
+
+Sujet : https://github.com/Doelia/M2-composants/raw/master/TD-TP-1-2.pdf
