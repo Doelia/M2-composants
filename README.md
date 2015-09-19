@@ -53,6 +53,16 @@ Sépare les données, les traitements et l'affichage.
 D'après le patron de conception **observateur/observable**, la vue est un « observateur » du modèle qui est lui « observable ».
 
 
+## Cours 16/09
+
+- Cours **"Des objets aux composants"**
+	- http://www.lirmm.fr/~dony/notesCours/cintrocomp.pdf
+- TD/TP : Document support en anglais sur le pattern Visitor
+	- https://github.com/Doelia/M2-composants/raw/master/TD-TP-1-2.pdf
+	- 3 première questions
+    - TP à avancer.
+   
+
 
 
 ## TP1
