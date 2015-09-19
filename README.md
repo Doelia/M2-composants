@@ -1,5 +1,4 @@
-# M2-composants
-HMIN 304 - Composants et reutilisation
+# Cours HMIN 304, Composants et reutilisation
 
 ## Utilisation
 Importer le repertoire **eclise/composants** dans Eclipse (Version Mars)
