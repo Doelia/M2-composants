@@ -17,11 +17,13 @@ Permet de former un arbre binaire récursif. Utilisé généralement pour les ar
 La classe Composant contient les méthodes de traitement abstraites. (exemple: ls pour dir/file)
 
 <a href="https://fr.wikipedia.org/wiki/Objet_composite">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Composite_UML_class_diagram_fr.svg/960px-Composite_UML_class_diagram_fr.svg.png" width="400" >
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Composite_UML_class_diagram_fr.svg/960px-Composite_UML_class_diagram_fr.svg.png" width="450" >
 </a>
 
 
 ### Observer
+
+Des objets Observer (ayant une mèthode onNotify()) se connectent à un Observable (ici Subject).
 
 <a href="https://fr.wikipedia.org/wiki/Observateur_(patron_de_conception)">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Observer.svg/854px-Observer.svg.png" width="500" >
