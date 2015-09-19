@@ -33,6 +33,14 @@ Des objets **Observer** (ayant une mèthode onNotify()) se connectent à un **Ob
 ### Vistor
 _Utlisé dans le TP1 (Fichiers/dossiers)_
 
+Permet de séparer un algorithme d'une structure de données.
+
+<a href="https://fr.wikipedia.org/wiki/Visiteur_(patron_de_conception)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Visitorpattern.png" width="500" >
+</a>
+
+
+
 ### MVC, Modèle vue controleur
 
 Est une combinaison des patrons **Observer**, **Stratégie** et **Composite**, qui forme ainsi un patron d'architecture
