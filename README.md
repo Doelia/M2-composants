@@ -15,7 +15,7 @@ _Utilisé dans le TP1 (Fichiers/dossiers)_
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Composite_UML_class_diagram_fr.svg/960px-Composite_UML_class_diagram_fr.svg.png)
 
-[https://fr.wikipedia.org/wiki/Objet_composite](Wikipedia)
+[Wikipedia](https://fr.wikipedia.org/wiki/Objet_composite)
 
 ### Observer
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Observer.svg/854px-Observer.svg.png)
