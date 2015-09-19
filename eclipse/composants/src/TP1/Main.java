@@ -1,5 +1,6 @@
 package TP1;
 
+import TP1.clientPart.VisitorCounter;
 import TP1.privatePart.Directory;
 import TP1.privatePart.File;
 
@@ -19,11 +20,12 @@ public class Main {
 	 *			Glacons.txt
 	 *
 	 */
+	
 	public static void test_1() {
 		Directory d = new Directory("Pastis");
 		Directory d2 = new Directory("Eau");
 		
-		File f = new File("Martini.txt", "martini");
+		File f = new File("Martini.txt", "martini plus long");
 		File f2 = new File("Ricard.txt", "ricard");
 		File f3 = new File("Glacons.txt", "glaçons");
 		File f4 = new File("Duval.txt", "duval");
@@ -45,6 +47,9 @@ public class Main {
 		
 		System.out.println("ls Eau :");
 		d2.ls();
+		
+		VisitorCounter visitorCounter = new VisitorCounter();
+		System.out.println(visitorCounter.getNumberBigFiles(d));
 	}
 
 }

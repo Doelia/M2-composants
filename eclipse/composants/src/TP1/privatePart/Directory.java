@@ -5,7 +5,7 @@ import java.util.Collection;
 
 public class Directory extends StorageElement {
 	
-	Collection<StorageElement> listeDossier; // Contenu
+	public Collection<StorageElement> listeDossier; // Contenu
 
 	public Directory(String nom) {
 		super(nom, 4);
