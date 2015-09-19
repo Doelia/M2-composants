@@ -9,7 +9,7 @@ public abstract class StorageElement
 {
 	public String name; // Nom
 	public int basicSize; // Espace de base qu'il occupe en memoire
-	public Directory parent; // Dossier parent
+	public Directory parent; // Dossier parent, Le nom d'un element racine est appelé par convention "racine"
 
 	/**
 	 *
@@ -27,15 +27,7 @@ public abstract class StorageElement
 		parent = d;
 	}
 
-	/**
-	 * 
-	 * @return la taille de l'élement
-	 * Le nom d'un element racine est appelé par convention "racine"
-	 */
 	public abstract int getSize();
-	
-	public abstract void accept(Visitor v);
-	
 
 	public String getAbsoluteLocation() {
 		return (parent != null) ?
@@ -54,5 +46,7 @@ public abstract class StorageElement
 	public int bitSize() {
 		return this.getSize() * 8;
 	}
+	
+	public abstract void accept(Visitor v);
 	
 }
