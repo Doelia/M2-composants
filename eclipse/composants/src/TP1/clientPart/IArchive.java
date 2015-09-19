@@ -1,9 +1,9 @@
-package TP1.visitorPart;
+package TP1.clientPart;
 
 import java.util.Collection;
 import java.util.HashMap;
 
-import TP1.objs.StorageElement;
+import TP1.privatePart.StorageElement;
 
 public interface IArchive {
 	

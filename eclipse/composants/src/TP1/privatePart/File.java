@@ -1,7 +1,4 @@
-package TP1.objs;
-
-import TP1.visitorPart.Visitor;
-
+package TP1.privatePart;
 
 /**
  * Représente un fichier texte
@@ -37,8 +34,7 @@ public class File extends StorageElement {
 
 	@Override
 	public void accept(Visitor v) {
-		// TODO Auto-generated method stub
-		
+		v.visiteFile(this);
 	}
 
 }

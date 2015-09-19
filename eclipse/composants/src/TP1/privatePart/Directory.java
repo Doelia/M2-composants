@@ -1,9 +1,7 @@
-package TP1.objs;
+package TP1.privatePart;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
-import TP1.visitorPart.Visitor;
 
 public class Directory extends StorageElement {
 	
@@ -105,8 +103,7 @@ public class Directory extends StorageElement {
 
 	@Override
 	public void accept(Visitor v) {
-		// TODO Auto-generated method stub
-		
+		v.visiteDirectory(this);
 	}
 
 }

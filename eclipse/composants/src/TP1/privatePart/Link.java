@@ -1,6 +1,10 @@
-package TP1.objs;
+package TP1.privatePart;
 
-import TP1.visitorPart.Visitor;
+/**
+ *  
+ * @author doelia
+ *
+ */
 
 public class Link extends StorageElement {
 	
@@ -19,10 +23,11 @@ public class Link extends StorageElement {
 	public int getSize() {
 		return contenu.length();
 	}
-
+	
 	@Override
 	public void accept(Visitor v) {
-		// TODO Auto-generated method stub
-		
+		v.visiteLink(this);
 	}
+
+	
 }

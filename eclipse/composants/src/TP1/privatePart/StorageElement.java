@@ -1,6 +1,4 @@
-package TP1.objs;
-
-import TP1.visitorPart.Visitor;
+package TP1.privatePart;
 
 /**
  * Classe correspondant à tous les éléments de stockage mémoire
@@ -37,6 +35,7 @@ public abstract class StorageElement
 	public abstract int getSize();
 	
 	public abstract void accept(Visitor v);
+	
 
 	public String getAbsoluteLocation() {
 		return (parent != null) ?

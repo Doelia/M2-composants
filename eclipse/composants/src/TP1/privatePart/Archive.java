@@ -1,8 +1,8 @@
-package TP1.objs;
+package TP1.privatePart;
 
 import java.util.HashMap;
 
-import TP1.visitorPart.IArchive;
+import TP1.clientPart.IArchive;
 
 /**
  * Classe représentant une archive
@@ -29,6 +29,11 @@ public class Archive extends Directory implements IArchive {
 		for (StorageElement s : listeDossier) {
 			s.parent.add(s);
 		}
+	}
+	
+	@Override
+	public void accept(Visitor v) {
+		v.visiteArchive(this);
 	}
 
 }

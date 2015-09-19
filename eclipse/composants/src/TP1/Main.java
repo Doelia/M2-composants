@@ -1,7 +1,7 @@
 package TP1;
 
-import TP1.objs.Directory;
-import TP1.objs.File;
+import TP1.privatePart.Directory;
+import TP1.privatePart.File;
 
 public class Main {
 	

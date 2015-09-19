@@ -1,6 +1,8 @@
-package TP1.objs;
+package TP1.privatePart;
 
-import TP1.visitorPart.Visitor;
+/**
+ * @author doelia
+ */
 
 public class Symlink extends StorageElement {
 	
@@ -27,7 +29,6 @@ public class Symlink extends StorageElement {
 
 	@Override
 	public void accept(Visitor v) {
-		// TODO Auto-generated method stub
 	}
 
 }
