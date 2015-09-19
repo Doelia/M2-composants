@@ -13,7 +13,8 @@ Doit être vu comme une contrainte et non pas comme un outil.
 ### Composite
 _Utilisé dans le TP1 (Fichiers/dossiers)_
 
-### Observateur
+### Observer
+![]({{site.baseurl}}/https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Observer.svg/854px-Observer.svg.png)
 
 ### Vistor
 _Utlisé dans le TP1 (Fichiers/dossiers)_
