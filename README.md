@@ -16,7 +16,7 @@ _Utilisé dans le TP1 (Fichiers/dossiers)_
 Permet de former un arbre binaire récursif. Utilisé généralement pour les arborescences.
 La classe Composant contient les méthodes de traitement abstraites. (exemple: ls pour dir/file)
 
-<a href="url"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Composite_UML_class_diagram_fr.svg/960px-Composite_UML_class_diagram_fr.svg.png" height="48" width="48" ></a>
+<a href="url"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Composite_UML_class_diagram_fr.svg/960px-Composite_UML_class_diagram_fr.svg.png" width="300" ></a>
 
 [Wikipedia](https://fr.wikipedia.org/wiki/Objet_composite)
 
