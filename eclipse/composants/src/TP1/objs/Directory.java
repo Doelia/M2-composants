@@ -5,27 +5,28 @@ import java.util.Collection;
 
 import TP1.pattern.Visitor;
 
-public class Directory extends ElementStockage {
+public class Directory extends StorageElement {
 	
-	Collection<ElementStockage> listeDossier; // Contenu
+	Collection<StorageElement> listeDossier; // Contenu
 
 	public Directory(String nom) {
 		super(nom, 4);
-		listeDossier = new ArrayList<ElementStockage>();
+		listeDossier = new ArrayList<StorageElement>();
 	}
 
-	// ici, la taille d'un dossier est gale la somme des tailles des diffrents
-	// lments prsents dans ce dossier.
-	public int size() {
+	/**
+	 * Retourne la taille totale du repertoire (somme récursive des fils)
+	 */
+	public int getSize() {
 		int somme = basicSize;
-		for (ElementStockage s : listeDossier) {
-			somme = somme + s.size();
+		for (StorageElement s : listeDossier) {
+			somme = somme + s.getSize();
 		}
 		return somme;
 	}
 
 	public void ls() {
-		for (ElementStockage s : listeDossier) {
+		for (StorageElement s : listeDossier) {
 			System.out.println(s.name);
 		}
 	}
@@ -35,28 +36,28 @@ public class Directory extends ElementStockage {
 	}
 
 	// ajoute l'lment e dans le dossier
-	public boolean add(ElementStockage e) {
+	public boolean add(StorageElement e) {
 		e.setParent(this); // le rpertoire courant devient le pre de l'lment
 		return listeDossier.add(e); // ajout de l'lment e la collection
 	}
 
 	// supprime et retourne vrai si la suppression de l'lment e s'est bien
 	// passe, faux sinon (e non prsent ou erreur)
-	public boolean remove(ElementStockage e) {
-		for (ElementStockage s : listeDossier) {
+	public boolean remove(StorageElement e) {
+		for (StorageElement s : listeDossier) {
 			if (s.name == e.name)
 				return listeDossier.remove(s); // suppression de l'lment e dans la collection
 		}
 		return false;
 	}
 
-	public boolean include(ElementStockage e) {
+	public boolean include(StorageElement e) {
 		return listeDossier.contains(e);
 	}
 
 	// rend l'element de nom "nom" si il existe (sinon retourne null)
-	public ElementStockage findElement(String nom) {
-		for (ElementStockage s : listeDossier) {
+	public StorageElement findElement(String nom) {
+		for (StorageElement s : listeDossier) {
 			if (s.name.equals(nom))
 				return s;
 		}
@@ -66,7 +67,7 @@ public class Directory extends ElementStockage {
 	// rend la collection des adresses absolues de nom "nom" que le repertoire contient
 	public ArrayList<String> find(String nom) {
 		ArrayList<String> collection = new ArrayList<String>();
-		for (ElementStockage s : listeDossier) {
+		for (StorageElement s : listeDossier) {
 			if (s.name.equals(nom))
 				collection.add(s.getAbsoluteLocation());
 		}
@@ -80,7 +81,7 @@ public class Directory extends ElementStockage {
 		ArrayList<String> collection = new ArrayList<String>();
 		ArrayList<String> temporaire; 
 
-		for (ElementStockage s : listeDossier) {
+		for (StorageElement s : listeDossier) {
 			if (s.name == nom)
 				collection.add(s.getAbsoluteLocation());
 

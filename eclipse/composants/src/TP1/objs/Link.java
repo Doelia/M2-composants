@@ -2,7 +2,7 @@ package TP1.objs;
 
 import TP1.pattern.Visitor;
 
-public class Link extends ElementStockage {
+public class Link extends StorageElement {
 	
 	private String contenu;
 

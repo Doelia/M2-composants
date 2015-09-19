@@ -2,22 +2,22 @@ package TP1.objs;
 
 import TP1.pattern.Visitor;
 
-public class Symlink extends ElementStockage {
+public class Symlink extends StorageElement {
 	
-	private ElementStockage reference;
+	private StorageElement reference;
 
 	public Symlink(String nom) {
 		super(nom, 0);
 		reference = null;
 	}
 
-	public Symlink(String nom, ElementStockage e) {
+	public Symlink(String nom, StorageElement e) {
 		super(nom, 0);
 		reference = e;
 	}
 
 	public int getSize() {
-		return (reference == null) ? 0 :  reference.getSize();
+		return (reference == null) ? 0 : reference.getSize();
 	}
 
 	// affiche le symbole du lien puis l'adresse absoule de sa rfrence

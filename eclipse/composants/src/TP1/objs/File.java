@@ -8,7 +8,7 @@ import TP1.pattern.Visitor;
  * @author doelia
  *
  */
-public class File extends ElementStockage {
+public class File extends StorageElement {
 
 	private String content; // Contenu
 

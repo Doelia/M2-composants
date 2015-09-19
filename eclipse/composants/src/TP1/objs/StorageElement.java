@@ -7,7 +7,7 @@ import TP1.pattern.Visitor;
  * @author doelia
  *
  */
-public abstract class ElementStockage
+public abstract class StorageElement
 {
 	public String name; // Nom
 	public int basicSize; // Espace de base qu'il occupe en memoire
@@ -18,13 +18,13 @@ public abstract class ElementStockage
 	 * @param nom
 	 * @param t taille de l'élément, par convention 4 pour un dossier
 	 */
-	public ElementStockage(String nom, int t) {
+	public StorageElement(String nom, int t) {
 		name = nom;
 		basicSize = t;
 		parent = null;
 	}
 
-	public ElementStockage(String nom, int t, Directory d) {
+	public StorageElement(String nom, int t, Directory d) {
 		this(nom, t);
 		parent = d;
 	}

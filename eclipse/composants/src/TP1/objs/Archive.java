@@ -15,16 +15,16 @@ public class Archive extends Directory implements IArchive {
 		super(nom);
 	}
 
-	public HashMap<String, ElementStockage> getContent() {
-		HashMap<String, ElementStockage> map = new HashMap<String, ElementStockage>();
-		for (ElementStockage s : listeDossier) {
+	public HashMap<String, StorageElement> getContent() {
+		HashMap<String, StorageElement> map = new HashMap<String, StorageElement>();
+		for (StorageElement s : listeDossier) {
 			map.put(s.getAbsoluteLocation(), s);
 		}
 		return map;
 	}
 
 	public void extract() {
-		for (ElementStockage s : listeDossier) {
+		for (StorageElement s : listeDossier) {
 			s.parent.add(s);
 		}
 	}
