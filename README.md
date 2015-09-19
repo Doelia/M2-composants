@@ -23,7 +23,7 @@ La classe Composant contient les méthodes de traitement abstraites. (exemple: l
 
 ### Observer
 
-Des objets Observer (ayant une mèthode onNotify()) se connectent à un Observable (ici Subject).
+Des objets **Observer** (ayant une mèthode onNotify()) se connectent à un **Observable** (ici Subject).
 
 <a href="https://fr.wikipedia.org/wiki/Observateur_(patron_de_conception)">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Observer.svg/854px-Observer.svg.png" width="500" >
