@@ -1,6 +1,7 @@
-package TP1;
+package TP1.objs;
 
 import java.util.HashMap;
+
 
 public class Archive extends Directory implements IArchive
 // classe repr�sentant une archive. (Elle h�rite de Directory car elle poss�de

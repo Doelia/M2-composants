@@ -1,7 +1,7 @@
-package part2;
+package TP1;
 
-import TP1.Directory;
-import TP1.File;
+import TP1.objs.Directory;
+import TP1.objs.File;
 
 public class Principale {
 	

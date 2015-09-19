@@ -1,9 +1,9 @@
-package TP1;
+package TP1.objs;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import pattern.Visitor;
+import TP1.pattern.Visitor;
 
 // classe reprsentant un dossier
 public class Directory extends ElementStockage {

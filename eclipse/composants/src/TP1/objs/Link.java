@@ -1,6 +1,6 @@
-package TP1;
+package TP1.objs;
 
-import pattern.Visitor;
+import TP1.pattern.Visitor;
 
 public class Link extends ElementStockage {
 	

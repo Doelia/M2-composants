@@ -1,4 +1,4 @@
-package TP1;
+package TP1.objs;
 
 import java.util.Collection;
 import java.util.HashMap;

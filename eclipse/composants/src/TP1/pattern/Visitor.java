@@ -1,4 +1,4 @@
-package pattern;
+package TP1.pattern;
 
 public interface Visitor {
 	

@@ -1,4 +1,4 @@
-package part2;
+package TP1;
 
 public class Main {
 
