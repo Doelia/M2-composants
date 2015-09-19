@@ -3,7 +3,7 @@ package TP1.objs;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import TP1.pattern.Visitor;
+import TP1.visitorPart.Visitor;
 
 public class Directory extends StorageElement {
 	

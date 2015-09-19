@@ -1,6 +1,6 @@
 package TP1.objs;
 
-import TP1.pattern.Visitor;
+import TP1.visitorPart.Visitor;
 
 public class Symlink extends StorageElement {
 	

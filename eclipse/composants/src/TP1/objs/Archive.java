@@ -2,6 +2,8 @@ package TP1.objs;
 
 import java.util.HashMap;
 
+import TP1.visitorPart.IArchive;
+
 /**
  * Classe représentant une archive
  * Hérite de Directory car elle possède toutes les caractéristiques d'un dossier

@@ -1,6 +1,6 @@
 package TP1.objs;
 
-import TP1.pattern.Visitor;
+import TP1.visitorPart.Visitor;
 
 /**
  * Classe correspondant à tous les éléments de stockage mémoire
