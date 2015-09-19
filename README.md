@@ -17,7 +17,7 @@ Permet de former un arbre binaire récursif. Utilisé généralement pour les ar
 La classe Composant contient les méthodes de traitement abstraites. (exemple: ls pour dir/file)
 
 <a href="https://fr.wikipedia.org/wiki/Objet_composite">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Composite_UML_class_diagram_fr.svg/960px-Composite_UML_class_diagram_fr.svg.png" width="500" >
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Composite_UML_class_diagram_fr.svg/960px-Composite_UML_class_diagram_fr.svg.png" width="400" >
 </a>
 
 
