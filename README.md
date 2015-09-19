@@ -15,6 +15,9 @@ _Utilisé dans le TP1 (Fichiers/dossiers)_
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Composite_UML_class_diagram_fr.svg/960px-Composite_UML_class_diagram_fr.svg.png)
 
+Permet de former un arbre binaire.
+La classe Composant contient les méthodes de traitement abstraites. (exemple: ls pour dir/file)
+
 [Wikipedia](https://fr.wikipedia.org/wiki/Objet_composite)
 
 ### Observer
@@ -26,7 +29,7 @@ _Utlisé dans le TP1 (Fichiers/dossiers)_
 
 ### MVC, Modèle vue controleur
 
-Est une combinaison des patrons **Observateur**, **Stratégie** et **Composite**, qui forme ainsi un patron d'architecture
+Est une combinaison des patrons **Observer**, **Stratégie** et **Composite**, qui forme ainsi un patron d'architecture
 
 Sépare les données, les traitements et l'affichage.
 - **Modele** : Représente les données, effectue les accès à la base (composant)
