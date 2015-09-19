@@ -10,16 +10,16 @@ import TP1.privatePart.Visitor;
 
 public class VisitorCounter implements Visitor {
 	
-	private int num = 0;
+	private int bigFiles = 0; // Nombre de fichiers ayants une taille >= 10
 	
 	/**
 	 * Retourne le nombre de fichiers dépassants 10 dans un repertoire
 	 * @return
 	 */
 	public int getNumberBigFiles(Directory dir) {
-		this.num = 0;
+		this.bigFiles = 0;
 		dir.accept(this);
-		return num;
+		return bigFiles;
 	}
 	
 	@Override
@@ -38,7 +38,7 @@ public class VisitorCounter implements Visitor {
 			}
 			if (d instanceof File) {
 				if (d.getSize() >= 10) {
-					this.num++;
+					this.bigFiles++;
 				}
 			}
 		}
