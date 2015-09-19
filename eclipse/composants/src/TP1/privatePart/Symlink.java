@@ -22,13 +22,16 @@ public class Symlink extends StorageElement {
 		return (reference == null) ? 0 : reference.getSize();
 	}
 
-	// affiche le symbole du lien puis l'adresse absoule de sa rfrence
+	/**
+	 * Affiche le symbole du lien puis l'adresse absolue de sa référence
+	 */
 	public void cat() {
 		System.out.println("ln -s " + reference.getAbsoluteLocation() + " " + name);
 	}
 
 	@Override
 	public void accept(Visitor v) {
+		v.visiteSymLink(this);
 	}
 
 }

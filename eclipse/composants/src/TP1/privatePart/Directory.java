@@ -53,7 +53,10 @@ public class Directory extends StorageElement {
 		return listeDossier.contains(e);
 	}
 
-	// rend l'element de nom "nom" si il existe (sinon retourne null)
+	/**
+	 * rend l'element de nom "nom" si il existe, null sinon
+	 * @param nom
+	 */
 	public StorageElement findElement(String nom) {
 		for (StorageElement s : listeDossier) {
 			if (s.name.equals(nom))
@@ -62,7 +65,10 @@ public class Directory extends StorageElement {
 		return null;
 	}
 
-	// rend la collection des adresses absolues de nom "nom" que le repertoire contient
+	/**
+	 * Retourne la collection des adresses absolues de nom "nom" que le repertoire contient
+	 * @param nom
+	 */
 	public ArrayList<String> find(String nom) {
 		ArrayList<String> collection = new ArrayList<String>();
 		for (StorageElement s : listeDossier) {
@@ -72,8 +78,12 @@ public class Directory extends StorageElement {
 		return collection;
 	}
 
-	// rend la collection des adresses absolues de nom "nom" que le rpertoire
-	// contient directement ou par transitivit
+	/**
+	 * Retoune la liste des adresses absolues de nom "nom" que le repertoire contient
+	 * par transitivité
+	 * @param nom
+	 * @return
+	 */
 	public ArrayList<String> findR(String nom) {
 		
 		ArrayList<String> collection = new ArrayList<String>();
@@ -94,7 +104,6 @@ public class Directory extends StorageElement {
 		return collection;
 	}
 
-	// affiche le contenu de la collection liste
 	public void afficheCollection(ArrayList<String> liste) {
 		for (String s : liste) {
 			System.out.println(s);

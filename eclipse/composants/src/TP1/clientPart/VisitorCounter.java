@@ -5,6 +5,7 @@ import TP1.privatePart.Directory;
 import TP1.privatePart.File;
 import TP1.privatePart.Link;
 import TP1.privatePart.StorageElement;
+import TP1.privatePart.Symlink;
 import TP1.privatePart.Visitor;
 
 public class VisitorCounter implements Visitor {
@@ -45,6 +46,10 @@ public class VisitorCounter implements Visitor {
 
 	@Override
 	public void visiteArchive(Archive o) {
+	}
+
+	@Override
+	public void visiteSymLink(Symlink o) {
 	}
 
 }
