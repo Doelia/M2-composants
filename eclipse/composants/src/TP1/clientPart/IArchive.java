@@ -5,6 +5,10 @@ import java.util.HashMap;
 
 import TP1.privatePart.StorageElement;
 
+/**
+ * @author Stéphane Wouters
+ */
+
 public interface IArchive {
 	
 	public boolean add(StorageElement e);

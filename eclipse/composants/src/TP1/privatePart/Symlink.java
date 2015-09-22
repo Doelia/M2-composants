@@ -1,7 +1,7 @@
 package TP1.privatePart;
 
 /**
- * @author doelia
+ * @author Stéphane Wouters
  */
 
 public class Symlink extends StorageElement {

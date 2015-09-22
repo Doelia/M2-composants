@@ -3,6 +3,10 @@ package TP1.privatePart;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * @author Stéphane Wouters
+ */
+
 public class Directory extends StorageElement {
 	
 	public Collection<StorageElement> listeDossier; // Contenu

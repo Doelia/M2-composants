@@ -8,6 +8,10 @@ import TP1.privatePart.StorageElement;
 import TP1.privatePart.Symlink;
 import TP1.privatePart.Visitor;
 
+/**
+ * @author Stéphane Wouters
+ */
+
 public class VisitorRaz implements Visitor  {
 	
 	public VisitorRaz(Directory dir) {

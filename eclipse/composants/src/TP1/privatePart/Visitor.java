@@ -1,5 +1,9 @@
 package TP1.privatePart;
 
+/**
+ * @author Stéphane Wouters
+ */
+
 public interface Visitor {
 	
 	public abstract void visiteLink(Link o);
