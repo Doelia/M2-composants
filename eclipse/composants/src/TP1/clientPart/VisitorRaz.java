@@ -8,7 +8,11 @@ import TP1.privatePart.StorageElement;
 import TP1.privatePart.Symlink;
 import TP1.privatePart.Visitor;
 
-public class VisitorRaz  implements Visitor  {
+public class VisitorRaz implements Visitor  {
+	
+	public VisitorRaz(Directory dir) {
+		dir.accept(this);
+	}
 
 	@Override
 	public void visiteLink(Link o) {
