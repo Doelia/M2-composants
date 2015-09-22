@@ -6,6 +6,11 @@ Importer le repertoire **eclise/composants** dans Eclipse (Version Mars)
 
 ## Les designs patterns
 
+### Factory (Fabrique)
+_Vu au cours 1 du 16/09_
+
+
+
 ### Singleton
 Oblige un objet à n'exister sous une seule instance.
 Doit être vu comme une contrainte et non pas comme un outil.
