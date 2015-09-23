@@ -82,5 +82,13 @@ D'après le patron de conception **observateur/observable**, la vue est un « ob
 ### Séance 23/09
 
 - Cours : Suite et fin du cours **"Des objets aux composants"**
+    - Listing des problèmes :
+        - L'expression du requis
+        - L'expression des architectures (il faut un UML pour les comprendre)
+        - La séparation aspects fonctionnels/non fonctionnels
+    - Défintion d'un composant et des différences apppoches
+        - Approche générale avec les ADLS (UML Component)
+        - Approche Framework (COM+, CORBA, ESB, web services...)
+        - Approche langage de Proy
 - TP : Suite du TP sur le patten Visitor
     - Pattern [Double Dispatch](https://fr.wikibooks.org/wiki/Patrons_de_conception/Double-dispatch) (pour compatiblité Java)
