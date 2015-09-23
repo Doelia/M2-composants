@@ -117,6 +117,9 @@ public class Directory extends StorageElement {
 	@Override
 	public void accept(Visitor v) {
 		v.visiteDirectory(this);
+		for (StorageElement s : listeDossier) {
+			s.accept(v);
+		}
 	}
 
 }

@@ -1,6 +1,7 @@
 package TP1;
 
 import TP1.clientPart.VisitorCounter;
+import TP1.clientPart.VisitorRaz;
 import TP1.privatePart.Directory;
 import TP1.privatePart.File;
 
@@ -49,7 +50,12 @@ public class Main {
 		d2.ls();
 		
 		VisitorCounter visitorCounter = new VisitorCounter();
-		System.out.println(visitorCounter.getNumberBigFiles(d));
+		VisitorRaz visitorRaz = new VisitorRaz();
+		
+		d.accept(visitorRaz);
+		d.accept(visitorCounter);
+		
+		System.out.println(visitorCounter.getNumberBigFiles());
 	}
 
 }
