@@ -58,7 +58,9 @@ Sépare les données, les traitements et l'affichage.
 D'après le patron de conception **observateur/observable**, la vue est un « observateur » du modèle qui est lui « observable ».
 
 
-## Cours 16/09
+## Résumé des séances 
+
+## Séance 16/09
 
 - Cours **"Des objets aux composants"**
 	- http://www.lirmm.fr/~dony/notesCours/cintrocomp.pdf
@@ -68,8 +70,7 @@ D'après le patron de conception **observateur/observable**, la vue est un « ob
     - TP à avancer.
    
 
+## Séance 23/09
 
-
-## TP1
-
-Sujet : https://github.com/Doelia/M2-composants/raw/master/TD-TP-1-2.pdf
+- Suite du cours **"Des objets aux composants"**
+- 
