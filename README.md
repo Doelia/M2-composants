@@ -9,8 +9,6 @@ Importer le repertoire **eclise/composants** dans Eclipse (Version Mars)
 ### Factory (Fabrique)
 _Vu au cours 1 du 16/09_
 
-
-
 ### Singleton
 Oblige un objet à n'exister sous une seule instance.
 Doit être vu comme une contrainte et non pas comme un outil.
@@ -42,10 +40,20 @@ Permet d'obtenir le même effet que d'ajouter une nouvelle méthode virtuelle à
 
 Contrainte : On accède uniquement à la partie publique de l'objet visité.
 
+Si on est dans un pattern Composite, ajouter dans la méthode accept le parcours puis les autres accepts. Exemple :
+```
+@Override
+public void accept(Visitor v) {
+	v.visiteDirectory(this);
+	for (StorageElement s : listeDossier) {
+		s.accept(v);
+	}
+}
+```
+
 <a href="https://fr.wikipedia.org/wiki/Visiteur_(patron_de_conception)">
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Visitorpattern.png" width="500" >
 </a>
-
 
 
 ### MVC, Modèle vue controleur
@@ -59,10 +67,9 @@ Sépare les données, les traitements et l'affichage.
 
 D'après le patron de conception **observateur/observable**, la vue est un « observateur » du modèle qui est lui « observable ».
 
-
 ## Résumé des séances
 
-## Séance 16/09
+### Séance 16/09
 
 - Cours **"Des objets aux composants"**
 	- http://www.lirmm.fr/~dony/notesCours/cintrocomp.pdf
@@ -72,7 +79,7 @@ D'après le patron de conception **observateur/observable**, la vue est un « ob
     - TP à avancer.
 
 
-## Séance 23/09
+### Séance 23/09
 
-- Suite du cours **"Des objets aux composants"**
--
+- Cours : Suite et fin du cours **"Des objets aux composants"**
+- TP : Suite du TP sur le patten Visitor
