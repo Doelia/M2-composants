@@ -1,6 +1,7 @@
 package TP1;
 
 import TP1.clientPart.VisitorCounter;
+import TP1.clientPart.VisitorFind;
 import TP1.clientPart.VisitorRaz;
 import TP1.privatePart.Directory;
 import TP1.privatePart.File;
@@ -51,10 +52,13 @@ public class Main {
 		
 		VisitorCounter visitorCounter = new VisitorCounter();
 		VisitorRaz visitorRaz = new VisitorRaz();
+		VisitorFind visitorFind = new VisitorFind("Eau");
 		
-		d.accept(visitorRaz);
+		//d.accept(visitorRaz);
 		d.accept(visitorCounter);
+		d.accept(visitorFind);
 		
+		System.out.println("list : "+visitorFind.getResult());
 		System.out.println(visitorCounter.getNumberBigFiles());
 	}
 

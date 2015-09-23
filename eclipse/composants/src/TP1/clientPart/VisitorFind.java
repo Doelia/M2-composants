@@ -17,10 +17,13 @@ public class VisitorFind  implements Visitor  {
 	
 	private String name;
 	private ArrayList<String> list;
-
-	public ArrayList<String> find(String name, Directory dir) {
+	
+	public VisitorFind(String name) {
 		this.name = name;
-		dir.accept(this);
+		list = new ArrayList<String>();
+	}
+
+	public ArrayList<String> getResult() {
 		return list;
 	}
 	
@@ -38,7 +41,7 @@ public class VisitorFind  implements Visitor  {
 
 	@Override
 	public void visiteDirectory(Directory o) {
-		list = o.findR(name);
+		list.addAll(o.findR(name));
 	}
 
 	@Override
