@@ -37,4 +37,8 @@ public class File extends StorageElement {
 		v.visiteFile(this);
 	}
 
+	public void remove() {
+		// TODO Auto-generated method stub
+	}
+
 }

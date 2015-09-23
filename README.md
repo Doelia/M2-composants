@@ -83,3 +83,4 @@ D'après le patron de conception **observateur/observable**, la vue est un « ob
 
 - Cours : Suite et fin du cours **"Des objets aux composants"**
 - TP : Suite du TP sur le patten Visitor
+    - Pattern [Double Dispatch](https://fr.wikibooks.org/wiki/Patrons_de_conception/Double-dispatch) (pour compatiblité Java)
