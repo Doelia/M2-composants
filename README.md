@@ -40,6 +40,8 @@ _Utlisé dans le TP1 (Fichiers/dossiers)_
 
 Permet d'obtenir le même effet que d'ajouter une nouvelle méthode virtuelle à un ensemble de classe qui ne le permet pas.
 
+Contrainte : On accède uniquement à la partie publique de l'objet visité.
+
 <a href="https://fr.wikipedia.org/wiki/Visiteur_(patron_de_conception)">
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Visitorpattern.png" width="500" >
 </a>
@@ -53,12 +55,12 @@ Est une combinaison des patrons **Observer**, **Stratégie** et **Composite**, q
 Sépare les données, les traitements et l'affichage.
 - **Modele** : Représente les données, effectue les accès à la base (composant)
 - **Controleur** : Gère les évenements (input), demande les appels à la vue
-- **Vue** : Met en forme l'affichage renvoyé par le **modèle**, intercepte les évents de l'user et les propage au **controleur**. 
+- **Vue** : Met en forme l'affichage renvoyé par le **modèle**, intercepte les évents de l'user et les propage au **controleur**.
 
 D'après le patron de conception **observateur/observable**, la vue est un « observateur » du modèle qui est lui « observable ».
 
 
-## Résumé des séances 
+## Résumé des séances
 
 ## Séance 16/09
 
@@ -68,9 +70,9 @@ D'après le patron de conception **observateur/observable**, la vue est un « ob
 	- https://github.com/Doelia/M2-composants/raw/master/TD-TP-1-2.pdf
 	- 3 première questions
     - TP à avancer.
-   
+
 
 ## Séance 23/09
 
 - Suite du cours **"Des objets aux composants"**
-- 
+-

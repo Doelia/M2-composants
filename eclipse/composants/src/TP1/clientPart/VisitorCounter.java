@@ -14,7 +14,6 @@ import TP1.privatePart.Visitor;
 
 public class VisitorCounter implements Visitor {
 	
-	ArrayList<File>
 	
 	private int bigFiles = 0; // Nombre de fichiers ayants une taille >= 10
 	
