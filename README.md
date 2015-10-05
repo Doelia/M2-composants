@@ -38,10 +38,17 @@ _Utlisé dans le TP1 (Fichiers/dossiers)_
 
 Permet d'obtenir le même effet que d'ajouter une nouvelle méthode virtuelle à un ensemble de classe qui ne le permet pas.
 
+Approche private/client code.
+
+<a href="https://fr.wikipedia.org/wiki/Visiteur_(patron_de_conception)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Visitorpattern.png" width="500" >
+</a>
+
+
 Contrainte : On accède uniquement à la partie publique de l'objet visité.
 
 Si on est dans un pattern Composite, ajouter dans la méthode accept le parcours puis les autres accepts. Exemple :
-```
+```java
 @Override
 public void accept(Visitor v) {
 	v.visiteDirectory(this);
@@ -51,9 +58,8 @@ public void accept(Visitor v) {
 }
 ```
 
-<a href="https://fr.wikipedia.org/wiki/Visiteur_(patron_de_conception)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Visitorpattern.png" width="500" >
-</a>
+- Facilité : Ajouter de opérations
+- Contre facilité : Ajouter de nouvelles classes
 
 
 ### MVC, Modèle vue controleur
