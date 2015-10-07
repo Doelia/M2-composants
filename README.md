@@ -101,3 +101,8 @@ D'après le patron de conception **observateur/observable**, la vue est un « ob
 
 ### Séance 30/09
 Cours annulé, pas encore reporté.
+
+### Séance 07/10
+
+- Cours de 1h30 sur NetBeans et la programmation orientée composants
+- Commencement TP NetBeans
