@@ -1,21 +1,3 @@
-# M2-composants
-Cours HMIN 304, Composants et reutilisation
-
-## Utilisation
-Importer le repertoire **eclise/composants** dans Eclipse (Version Mars)
-
-## Les designs patterns
-
-### Factory (Fabrique)
-_Vu au cours 1 du 16/09_
-
-### Singleton
-Oblige un objet à n'exister sous une seule instance.
-Doit être vu comme une contrainte et non pas comme un outil.
-
-### Composite
-_Utilisé dans le TP1 (Fichiers/dossiers)_
-
 Permet de former un arbre binaire récursif. Utilisé généralement pour les arborescences.
 La classe Composant contient les méthodes de traitement abstraites. (exemple: ls pour dir/file)
 
@@ -105,4 +87,4 @@ Cours annulé, pas encore reporté.
 ### Séance 07/10
 
 - Cours de 1h30 sur NetBeans et la programmation orientée composants
-- Commencement TP NetBeans
+- TP NetBeans OK (création et utilisation de composants en interface graphique)
