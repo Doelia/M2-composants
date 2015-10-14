@@ -94,7 +94,7 @@ Cours annulé, pas encore reporté.
 - Cours de 1h30 sur [JAspect Java](http://www.lirmm.fr/~dony/notesCours/aspects.pdf)
   - Programmation orientée aspéects
   - Cours manqué à 75%
-- TP d'initiation à AspectJ
+- (TP d'initiation à AspectJ](http://www.lirmm.fr/~dony/enseig/RC/TP-Aspects.pdf)
   - Installation sous Eclipse Kepler
   - Téléchargements avec Install Software : https://eclipse.org/ajdt/downloads/
   - Configuration pour compiler : JavaSE-1.6 (Java SE 7 [1.7.0_79]) et aspectj.runtime_1.7.3
