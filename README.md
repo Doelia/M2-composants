@@ -88,3 +88,12 @@ Cours annulé, pas encore reporté.
 
 - Cours de 1h30 sur NetBeans et la programmation orientée composants
 - TP NetBeans OK (création et utilisation de composants en interface graphique)
+
+### Séance 14/10
+
+- Cours de 1h30 sur [JAspect Java](http://www.lirmm.fr/~dony/notesCours/aspects.pdf)
+  - Programmation orientée aspéects
+  - Cours manqué à 75%
+- TP d'initiation à AspectJ
+  - Installation sous Eclipse Kepler
+  - Téléchargements avec Install Software : https://eclipse.org/ajdt/downloads/
