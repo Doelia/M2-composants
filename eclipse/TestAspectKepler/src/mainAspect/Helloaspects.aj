@@ -2,12 +2,15 @@ package mainAspect;
 
 public aspect Helloaspects {
 
-	pointcut all():
-		call(* Helloer.*(..));
+	pointcut toPersonne(Personne p):
+		args(p) &&
+		call(* Helloer.*(Personne));
 	
-	void around() : all() {
-		System.out.println("---");
-		proceed();
-		System.out.println("---");
+	pointcut toPlace():
+		call (* Helloer.*(Place));
+	
+	before(Personne p): toPersonne(p) {
+		System.out.println("Affichage individuel à "+p);
 	}
+	
 }
