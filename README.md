@@ -97,3 +97,4 @@ Cours annulé, pas encore reporté.
 - TP d'initiation à AspectJ
   - Installation sous Eclipse Kepler
   - Téléchargements avec Install Software : https://eclipse.org/ajdt/downloads/
+  - Configuration pour compiler : JavaSE-1.6 (Java SE 7 [1.7.0_79]) et aspectj.runtime_1.7.3
