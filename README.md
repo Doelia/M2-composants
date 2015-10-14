@@ -95,6 +95,9 @@ Cours annulé, pas encore reporté.
   - Programmation orientée aspéects
   - Cours manqué à 75%
 - (TP d'initiation à AspectJ](http://www.lirmm.fr/~dony/enseig/RC/TP-Aspects.pdf)
-  - Installation sous Eclipse Kepler
-  - Téléchargements avec Install Software : https://eclipse.org/ajdt/downloads/
-  - Configuration pour compiler : JavaSE-1.6 (Java SE 7 [1.7.0_79]) et aspectj.runtime_1.7.3
+  - Configuration
+    - Installation sous Eclipse Kepler
+    - Téléchargements avec Install Software : https://eclipse.org/ajdt/downloads/
+    - Configuration pour compiler : JavaSE-1.6 (Java SE 7 [1.7.0_79]) et aspectj.runtime_1.7.3
+  - Utilisation
+	 - Voir le fichier Helloaspects pour des exemples avec passage de paramètre
