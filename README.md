@@ -101,3 +101,16 @@ Cours annulé, pas encore reporté.
     - Configuration pour compiler : JavaSE-1.6 (Java SE 7 [1.7.0_79]) et aspectj.runtime_1.7.3
   - Utilisation
 	 - Voir le fichier Helloaspects pour des exemples avec passage de paramètre
+
+### Séance 21/10
+
+Pas cours
+
+### Séance 04/11
+- Cours de 1h30 sur [JEE](http://www.lirmm.fr/~dony/notesCours/cejb.pdf)
+  - Amphi 6.01
+  - Une feuille de note prise (résumé introduction sur les applis n tiers)
+  - Cours terminé
+  - Pas mal de parties obseletes...
+- Commencement [TP](http://www.lirmm.fr/~tibermacin/ens/gmin30f/tp/01_ejb/tp_ejb1.pdf)
+  - Sur les composants EJB
