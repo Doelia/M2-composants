@@ -132,3 +132,8 @@ Pas cours
   - Pas mal de parties obseletes...
 - Commencement [TP](http://www.lirmm.fr/~tibermacin/ens/gmin30f/tp/01_ejb/tp_ejb1.pdf)
   - Sur les composants EJB
+  - Exercice 1 sur le composant EJB + client web OK
+
+### Séance 11/11
+
+Pas cours (férié)

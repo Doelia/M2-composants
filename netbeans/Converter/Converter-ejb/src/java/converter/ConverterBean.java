@@ -25,6 +25,8 @@ public class ConverterBean implements Converter {
 
     @Override
     public double euroToOtherCurrency(double amount, String currencyCode) {
+        System.out.println("amount = "+amount);
+        System.out.println("cur = "+currencyCode);
         try {
             SAXBuilder sxb = new SAXBuilder();
             URL url = new URL( "http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
@@ -36,7 +38,7 @@ public class ConverterBean implements Converter {
             for (Element e : elem.getChildren()) {
                 if (e.getAttribute("currency").getValue().equals(currencyCode)) {
                     String rate = e.getAttribute("rate").getValue();
-                    Double.parseDouble(rate);
+                    return Double.parseDouble(rate) * amount;
                 }
             }
         } catch (JDOMException | IOException e) {

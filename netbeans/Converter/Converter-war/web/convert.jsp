@@ -17,7 +17,7 @@
         
         <%
         double amount = Double.parseDouble(request.getParameter("amount"));
-        String currency = request.getParameter("amount");
+        String currency = request.getParameter("devise");
         double converted = beanConv.euroToOtherCurrency(amount, currency);
         out.print(converted);
         %>
