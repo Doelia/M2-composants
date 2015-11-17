@@ -8,6 +8,7 @@ package converter;
 import java.io.IOException;
 import java.net.URL;
 import javax.ejb.LocalBean;
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -21,7 +22,9 @@ import org.jdom2.input.SAXBuilder;
  */
 @Stateless
 @LocalBean
+@Remote(Converter.class)
 public class ConverterBean implements Converter {
+    
 
     @Override
     public double euroToOtherCurrency(double amount, String currencyCode) {
