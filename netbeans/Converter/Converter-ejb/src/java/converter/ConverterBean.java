@@ -7,7 +7,6 @@ package converter;
 
 import java.io.IOException;
 import java.net.URL;
-import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import org.jdom2.Document;
@@ -21,7 +20,6 @@ import org.jdom2.input.SAXBuilder;
  * @author doelia
  */
 @Stateless
-@LocalBean
 @Remote(Converter.class)
 public class ConverterBean implements Converter {
     
@@ -29,10 +27,10 @@ public class ConverterBean implements Converter {
     @Override
     public double euroToOtherCurrency(double amount, String currencyCode) {
         System.out.println("amount = "+amount);
-        System.out.println("cur = "+currencyCode);
+        System.out.println("cur = " + currencyCode);
         try {
             SAXBuilder sxb = new SAXBuilder();
-            URL url = new URL( "http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
+            URL url = new URL("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
             Document document = sxb.build(url);
             Element racine = document.getRootElement();
             Namespace ns = Namespace.getNamespace("http://www.ecb.int/vocabulary/2002-08-01/eurofxref");
