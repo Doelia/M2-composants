@@ -4,6 +4,14 @@
     Author     : doelia
 --%>
 
+<%@page import="javax.jms.MessageProducer"%>
+<%@page import="javax.jms.TextMessage"%>
+<%@page import="javax.jms.Session"%>
+<%@page import="javax.jms.Connection"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.jms.QueueConnectionFactory"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="javax.naming.Context"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" import="java.util.*" %>
 <!DOCTYPE html>
 <html>
@@ -17,7 +25,7 @@
         <h1>Convertisseur de devise</h1>
         
         <%
-            String amount = request.getParameter("amount"); // ...
+            String amount = request.getParameter("amount");
             if ((amount != null) && (amount.length() != 0)) {
                 double amountDouble = Double.parseDouble(request.getParameter("amount"));
                 String currency = request.getParameter("devise");
@@ -32,6 +40,22 @@
                     // le MDB va ensuite envoyer un email avec toutes
                     // ces informations au format HTML (dans un tableau HTML)
                     // (voir plus loin ce que doivent faire les beans) ...
+                    
+                    Context jndiContext = new InitialContext();
+                    javax.jms.ConnectionFactory connectionFactory =
+                    (QueueConnectionFactory)jndiContext.lookup("jms/MailContentQueueFactory");
+                    
+                    Connection connection = connectionFactory.createConnection();
+                    Session sessionQ = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+                    
+                    TextMessage message = sessionQ.createTextMessage();
+                    message.setText(amount+"#"+email);
+                    
+                    javax.jms.Queue queue = (javax.jms.Queue) jndiContext.lookup("jms/MailContentQueue");
+                    
+                    MessageProducer messageProducer=sessionQ.createProducer(queue);
+                    messageProducer.send(message);
+                    
                 }
             }
         %>

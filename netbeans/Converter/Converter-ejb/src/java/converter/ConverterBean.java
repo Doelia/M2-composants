@@ -10,11 +10,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.ejb.Remote;
 import javax.ejb.Stateful;
-import javax.ejb.Stateless;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -31,12 +28,11 @@ public class ConverterBean implements Converter {
     
     private SAXBuilder sxb;
     private Document document;
-    private Map<Monnaie, Double> map;
     
     private Element racine;
     private Namespace ns;
     
-    
+    // TODO ne pas init à chaque fois
     private void init() throws MalformedURLException, JDOMException, IOException {
         sxb = new SAXBuilder();
         URL url = new URL("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
@@ -70,10 +66,10 @@ public class ConverterBean implements Converter {
 
     @Override
     public Map<Monnaie, Double> euroToOtherCurrencies(double amount) {
+        Map<Monnaie, Double> map = new HashMap<>();
+        
         try {
             this.init();
-            
-            Map<Monnaie, Double> map = new HashMap<>();
             
             for (Element e : racine.getChildren()) {
                 String currency = e.getAttribute("currency").getValue();
@@ -82,20 +78,18 @@ public class ConverterBean implements Converter {
                 Monnaie m = new Monnaie();
                 m.codeMonnaie = currency;
                 m.tauxDeChange = rate;
-                m.pays = "";
+                m.pays = ""; // TODO, récupérer depuis un autre XML
                 m.nomMonnaie = currency;
                 
                 Double calculated = m.tauxDeChange * rate;
                 
                 map.put(m, calculated);
-                
             }
-            
-            return map;
             
         } catch (JDOMException | IOException e) {
             e.printStackTrace();
         }
+        return map;
         
     }
 
