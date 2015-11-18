@@ -135,5 +135,15 @@ Pas cours
   - Exercice 1 sur le composant EJB + client web OK
 
 ### Séance 11/11
-
 Pas cours (férié)
+
+### Séance 18/11
+- Annonce d'un TP noté qui sera relevé à la fin de la prochaine séance (voir mail)
+- Intervenant M. Tibermacine n°1
+    - - Support de cours/tp : http://www.lirmm.fr/~tibermacin/ens/gmin30f/
+- Cours de 1h30
+    - [Programmation par composants avec Spring](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours1.pdf) OK
+    - Début [Programmation par composants avec OSGi](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours2.pdf)
+- TP
+    - Suite TP1, terminé
+    - Suite TP2, commencé, codé mais pas testé
