@@ -5,7 +5,6 @@
  */
 package converter;
 
-import java.util.Map;
 import javax.ejb.Remote;
 
 /**
@@ -16,6 +15,5 @@ import javax.ejb.Remote;
 public interface Converter {
     
     public double euroToOtherCurrency(double amount, String currencyCode);
-    public Map<Monnaie, Double> euroToOtherCurrencies(double amount);
     
 }

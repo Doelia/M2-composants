@@ -5,17 +5,19 @@
  */
 package converter;
 
-import java.util.Map;
-import javax.ejb.Remote;
+
 
 /**
  *
  * @author doelia
  */
-@Remote
-public interface Converter {
+public class Monnaie  {
     
-    public double euroToOtherCurrency(double amount, String currencyCode);
-    public Map<Monnaie, Double> euroToOtherCurrencies(double amount);
+    public String pays;
+    public String nomMonnaie;
+    public String codeMonnaie;
+    public double tauxDeChange;
+
+    
     
 }
