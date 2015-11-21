@@ -106,6 +106,7 @@ Cours annulé, pas encore reporté.
 
 - Cours de 1h30 sur NetBeans et la programmation orientée composants
 - TP NetBeans OK (création et utilisation de composants en interface graphique)
+	- Projet netbeans : netbeans/Appli1
 
 ### Séance 14/10
 
@@ -132,7 +133,8 @@ Pas cours
   - Pas mal de parties obseletes...
 - Commencement [TP](http://www.lirmm.fr/~tibermacin/ens/gmin30f/tp/01_ejb/tp_ejb1.pdf)
   - Sur les composants EJB
-  - Exercice 1 sur le composant EJB + client web OK
+  - Projet Netbeans : netbeans/Converter_old
+  - TP1 sur le composant EJB + client web OK
 
 ### Séance 11/11
 Pas cours (férié)
@@ -145,5 +147,5 @@ Pas cours (férié)
     - [Programmation par composants avec Spring](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours1.pdf) OK
     - Début [Programmation par composants avec OSGi](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours2.pdf)
 - TP
-    - Suite TP1, terminé
-    - Suite TP2, commencé, codé mais pas testé
+    - Début TP2, commencé, codé mais pas testé
+    - Fork du TP1, projet netbeans : netbeans/Converter_old
