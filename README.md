@@ -61,7 +61,6 @@ Pas cours
   - Pas mal de parties obseletes...
 - Commencement [TP](http://www.lirmm.fr/~tibermacin/ens/gmin30f/tp/01_ejb/tp_ejb1.pdf)
   - Sur les composants EJB
-  - Projet Netbeans : netbeans/Converter_old
   - TP1 sur le composant EJB + client web OK
 
 ### Séance 11/11
@@ -76,4 +75,4 @@ Pas cours (férié)
     - Début [Programmation par composants avec OSGi](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours2.pdf)
 - TP
     - Début TP2, commencé, codé mais pas testé
-    - Fork du TP1, projet netbeans : netbeans/Converter_old
+        - Fork du TP1, projet netbeans
