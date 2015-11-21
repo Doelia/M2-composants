@@ -5,10 +5,10 @@ Cours HMIN 304, Composants et reutilisation
 
 ### Séance 16/09
 
-- Cours **"Des objets aux composants"**
+- Cours **Des objets aux composants**
 	- http://www.lirmm.fr/~dony/notesCours/cintrocomp.pdf
 - TD/TP : Document support en anglais sur le pattern Visitor
-	- https://github.com/Doelia/M2-composants/raw/master/TD-TP-1-2.pdf
+	- https://github.com/Doelia/M2-composants/raw/master/0916_visitor/TD-TP-1-2.pdf
 	- 3 première questions
     - TP à avancer.
 
