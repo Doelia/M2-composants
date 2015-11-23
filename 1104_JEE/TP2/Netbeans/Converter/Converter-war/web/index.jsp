@@ -23,49 +23,58 @@
         <jsp:useBean class="converter.ConverterBean" id="beanConv"/>
 
         <h1>Convertisseur de devise</h1>
-        
+
         <%
-            String amount = request.getParameter("amount");
-            if ((amount != null) && (amount.length() != 0)) {
-                double amountDouble = Double.parseDouble(request.getParameter("amount"));
-                String currency = request.getParameter("devise");
-                
-                double converted = beanConv.euroToOtherCurrency(amountDouble, currency);
-                out.print(converted);
-        
-                String email = request.getParameter("email");
-                if (email != null && email.length() != 0) {
+            if (request.getParameter("amount") != null) {
+                String amount = request.getParameter("amount");
+                if ((amount != null) && (amount.length() != 0)) {
+                    double amountDouble = Double.parseDouble(request.getParameter("amount"));
+                    String currency = request.getParameter("devise");
+
+                    double converted = beanConv.euroToOtherCurrency(amountDouble, currency);
+                    out.print(converted);
+
+                    String email = request.getParameter("email");
+                    if (email != null && email.length() != 0) {
+                        
+                        out.println("Add mail in queue...");
                     // Demander au MDB de déclencher la demande de conversion
-                    // dans toutes les monnaies par le bean session
-                    // le MDB va ensuite envoyer un email avec toutes
-                    // ces informations au format HTML (dans un tableau HTML)
-                    // (voir plus loin ce que doivent faire les beans) ...
-                    
-                    Context jndiContext = new InitialContext();
-                    javax.jms.ConnectionFactory connectionFactory =
-                    (QueueConnectionFactory)jndiContext.lookup("jms/MailContentQueueFactory");
-                    
-                    Connection connection = connectionFactory.createConnection();
-                    Session sessionQ = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-                    
-                    TextMessage message = sessionQ.createTextMessage();
-                    message.setText(amount+"#"+email);
-                    
-                    javax.jms.Queue queue = (javax.jms.Queue) jndiContext.lookup("jms/MailContentQueue");
-                    
-                    MessageProducer messageProducer=sessionQ.createProducer(queue);
-                    messageProducer.send(message);
-                    
+                        // dans toutes les monnaies par le bean session
+                        // le MDB va ensuite envoyer un email avec toutes
+                        // ces informations au format HTML (dans un tableau HTML)
+                        // (voir plus loin ce que doivent faire les beans) ...
+
+                        Context jndiContext = new InitialContext();
+                        javax.jms.ConnectionFactory connectionFactory
+                                = (QueueConnectionFactory) jndiContext.lookup("jms/MailContentQueueFactory");
+
+                        Connection connection = connectionFactory.createConnection();
+                        Session sessionQ = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+
+                        TextMessage message = sessionQ.createTextMessage();
+                        message.setText(amount + "#" + email);
+
+                        javax.jms.Queue queue = (javax.jms.Queue) jndiContext.lookup("jms/MailContentQueue");
+
+                        MessageProducer messageProducer = sessionQ.createProducer(queue);
+                        messageProducer.send(message);
+
+                    } else {
+                         out.println("Pas de mail entré.");
+                    }
                 }
+            } else {
+                out.println("Debug : Pas d'entrée de formulaire");
             }
+
         %>
 
         <p>Liste des devises : http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml</p>
         <form action="index.jsp">
             Montant <input name="amount"><br>
             Monnaie cible <input name="devise"><br>
-            Adresse email : <input name="mail" type="email" />
-            <button type="submit" value="GO">
+            Adresse email : <input name="email" type="email" />
+            <button type="submit" value="GO" />
         </form>
     </body>
 </html>
