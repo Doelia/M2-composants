@@ -6,10 +6,13 @@ import javax.naming.*;
 
 class Client {
     public static void main(String[] args) {
+        System.out.println("Hello :)");
         try {
             InitialContext context = new InitialContext();
+
+            System.out.println("Lookup...");
             Converter converter = (Converter) context.lookup(
-                "java:global/Converter/Converter-ejb/ConverterBean");
+                "java:global/ConverterTP1/ConverterTP1-ejb/ConverterBean");
 
             double converted = converter.euroToOtherCurrency(10, "USD");
             System.out.println("Go :"+converted);

@@ -56,7 +56,7 @@ public class ConverterBean implements Converter {
             Namespace ns = Namespace.getNamespace("http://www.ecb.int/vocabulary/2002-08-01/eurofxref");
             racine = racine.getChild("Cube", ns);
             racine = racine.getChild("Cube", ns);
-        }   
+        }
         
         {
            URL url = new URL("http://www.currency-iso.org/dam/downloads/lists/list_one.xml");
@@ -88,20 +88,7 @@ public class ConverterBean implements Converter {
     public double euroToOtherCurrency(double amount, String currencyCode) {
         System.out.println("amount = "+amount);
         System.out.println("cur = " + currencyCode);
-        try {
-            
-            this.init();
-            
-            for (Element e : racine.getChildren()) {
-                if (e.getAttribute("currency").getValue().equals(currencyCode)) {
-                    String rate = e.getAttribute("rate").getValue();
-                    return Double.parseDouble(rate) * amount;
-                }
-            }
-        } catch (JDOMException | IOException e) {
-            e.printStackTrace();
-        }
-        return 0;
+        CurrencyConvertorSoap cc = new CurrencyConvertor().getCurrencyConvertorSoap();
     }
 
     @Override
