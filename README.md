@@ -76,3 +76,6 @@ Pas cours (férié)
 - TP
     - Début TP2, commencé, codé mais pas testé
         - Fork du TP1, projet netbeans
+        - Pour le MailerMDB, je n'ai pas réussi à créér un "jms/" avec "Project Destination". J'ai du créer deux modules depuis l'admin du serveur GlassFish :
+            - jms/MailContentQueueFactory en Factory
+            - jms/MailContentQueue en Destination Ressource

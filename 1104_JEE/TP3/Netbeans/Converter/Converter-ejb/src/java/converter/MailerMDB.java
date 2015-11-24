@@ -65,6 +65,7 @@ public class MailerMDB implements MessageListener {
                 p.put("mail.smtp.host", "smtp.gmail.com");
                 p.put("mail.smtp.auth", "true");
                 p.put("mail.smtp.starttls.enable", "true");
+                p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
                 javax.mail.Session session = javax.mail.Session.getInstance(p);
                 javax.mail.Message msg = new MimeMessage(session);
                 try {
@@ -85,7 +86,7 @@ public class MailerMDB implements MessageListener {
                     // Préparation de l'envoi du mail
                     Transport transport = session.getTransport("smtp");
                     System.out.println("[MailderMDB] connect mailderMDB...");
-                    transport.connect("smtp.gmail.com", 25, "jeetests@gmail.com", "gogogogo");
+                    transport.connect("smtp.gmail.com", 465, "jeetests", "gogogogo");
                     // Envoi du mail
                     System.out.println("sendMessage...");
                     transport.sendMessage(msg, msg.getAllRecipients());
