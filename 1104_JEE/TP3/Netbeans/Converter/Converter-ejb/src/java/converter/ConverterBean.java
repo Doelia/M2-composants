@@ -10,103 +10,86 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Remote;
 import javax.ejb.Stateful;
-import net.webservicex.Currency;
-import net.webservicex.CurrencyConvertor;
-import net.webservicex.CurrencyConvertorSoap;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
-import org.jdom2.Namespace;
 import org.jdom2.input.SAXBuilder;
 
-// Boite mail pour envoyer :
-// jeetests@gmail.com
-// gogogogo
-/**
- *
- * @author doelia
- */
+
 @Stateful // Pour garder en mémoire l'instance
 @Remote(Converter.class)
 public class ConverterBean implements Converter {
 
-    //private SAXBuilder sxb;
-    //private Document document;
-    private Element racine;
+
+    private ArrayList<String> listCurrencies;
     private Element racineMore;
-    // private Namespace ns;
 
     private boolean isInit = false;
 
-    // TODO ne pas init à chaque fois
-    private void init() throws MalformedURLException, JDOMException, IOException {
+    private void init() {
         if (isInit) {
             return;
         }
         this.isInit = true;
-
+        this.buildCurrencyList();
+        this.buildFullNameCurrencyDocument();
+    }
+    
+    private void buildFullNameCurrencyDocument() {
         SAXBuilder sxb = new SAXBuilder();
-
-        {
-            URL url = new URL("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
-            Document document = sxb.build(url);
-            racine = document.getRootElement();
-            Namespace ns = Namespace.getNamespace("http://www.ecb.int/vocabulary/2002-08-01/eurofxref");
-            racine = racine.getChild("Cube", ns);
-            racine = racine.getChild("Cube", ns);
-        }
-
-        {
+        try {
             URL url = new URL("http://www.currency-iso.org/dam/downloads/lists/list_one.xml");
             Document document = sxb.build(url);
             racineMore = document.getRootElement();
             racineMore = racineMore.getChild("CcyTbl");
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(ConverterBean.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JDOMException ex) {
+            Logger.getLogger(ConverterBean.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ConverterBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    private String getFullNameMonay(String currencyCode) {
+    
+    private void buildCurrencyList() {
+        System.out.println("buildCurrencyList...");
+        listCurrencies = new ArrayList<>();
         try {
-            this.init();
-            for (Element e : racineMore.getChildren()) {
-                String ccy = e.getChildText("Ccy");
-                if (ccy != null && ccy.equals(currencyCode)) {
-                    return e.getChildText("CtryNm");
-                }
+            URL url = new URL("http://currencies.apps.grandtrunk.net/currencies");
+            BufferedReader in2 = new BufferedReader(new InputStreamReader(url.openStream()));
+            String cur;
+            while ((cur = in2.readLine()) != null) {
+                listCurrencies.add(cur);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(ConverterBean.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ConverterBean.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return "Undefined";
+    }
+    
+    public ArrayList<String> getCurrenciesList() {
+        this.init();
+        return listCurrencies;
     }
 
     @Override
     public double euroToOtherCurrency(double amount, String currencyCode) {
-        System.out.println("amount = " + amount);
-        System.out.println("cur = " + currencyCode);
-        /*
-         CurrencyConvertorSoap cc = new CurrencyConvertor().getCurrencyConvertorSoap();
-         Currency go = null;
-         for (Currency c : Currency.values()) {
-         if (c.value().equals(currencyCode)) {
-         go = c;
-         }
-         }
-         double rate = cc.conversionRate(Currency.EUR, go);
-         */
+        this.init();
+        System.out.println("[ConverterBean] amount = " + amount);
+        System.out.println("[ConverterBean] currencyCode = " + currencyCode);
         try {
             URL url = new URL("http://currencies.apps.grandtrunk.net/getlatest/" + "EUR" + "/" + currencyCode);
             BufferedReader in2 = new BufferedReader(new InputStreamReader(url.openStream()));
             String rateStr = in2.readLine();
             Double rate = Double.parseDouble(rateStr);
             System.out.println("rate = " + rate);
-             return rate * amount;
+            return rate * amount;
         } catch (MalformedURLException ex) {
             Logger.getLogger(ConverterBean.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -115,34 +98,25 @@ public class ConverterBean implements Converter {
 
        return -1;
     }
-
-    @Override
-    public Map<Monnaie, Double> euroToOtherCurrencies(double amount) {
-        Map<Monnaie, Double> map = new HashMap<>();
-
+    
+    public String getFullNameMonay(String currencyCode){ 
         try {
             this.init();
-
-            for (Element e : racine.getChildren()) {
-                String currency = e.getAttribute("currency").getValue();
-                Double rate = Double.parseDouble(e.getAttribute("rate").getValue());
-
-                Monnaie m = new Monnaie();
-                m.codeMonnaie = currency;
-                m.tauxDeChange = rate;
-                m.pays = getFullNameMonay(currency);
-                m.nomMonnaie = currency;
-
-                Double calculated = m.tauxDeChange * rate;
-
-                map.put(m, calculated);
+            for (Element e : racineMore.getChildren()) {
+                String ccy = e.getChildText("Ccy");
+                if (ccy != null && ccy.equals(currencyCode)) {
+                    return "("+e.getChildText("CtryNm")+")";
+                }
             }
-
-        } catch (JDOMException | IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return map;
 
+        return "";
     }
+
+
+
+    
 
 }

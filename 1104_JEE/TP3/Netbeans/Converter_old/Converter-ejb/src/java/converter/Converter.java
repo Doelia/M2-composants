@@ -16,5 +16,6 @@ import javax.ejb.Remote;
 public interface Converter {
     
     public double euroToOtherCurrency(double amount, String currencyCode);
+    public Map<Monnaie, Double> euroToOtherCurrencies(double amount);
     
 }

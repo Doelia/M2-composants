@@ -4,6 +4,7 @@
     Author     : doelia
 --%>
 
+<%@page import="java.util.concurrent.ExecutionException"%>
 <%@page import="javax.jms.MessageProducer"%>
 <%@page import="javax.jms.TextMessage"%>
 <%@page import="javax.jms.Session"%>
@@ -18,65 +19,81 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     </head>
-    <body>
+    <body class="container">
         <jsp:useBean class="converter.ConverterBean" id="beanConv"/>
 
-        <h1>Convertisseur de devise</h1>
-
+        <h1>Convertisseur</h1>
+        
         <%
-            if (request.getParameter("amount") != null) {
+            String defaultValue = "0";
+            String defaultCurrency = "";
+            String defaultConverted = "0";
+            String errMessage = null;
+            
+            // Gestion du formulaire
+            if (request.getParameter("submit") != null) {
                 String amount = request.getParameter("amount");
-                if ((amount != null) && (amount.length() != 0)) {
-                    double amountDouble = Double.parseDouble(request.getParameter("amount"));
-                    String currency = request.getParameter("devise");
-
-                    double converted = beanConv.euroToOtherCurrency(amountDouble, currency);
-                    out.print(converted);
-
-                    String email = request.getParameter("email");
-                    if (email != null && email.length() != 0) {
+                String currency = request.getParameter("currency");
+                
+                if (amount == null || currency == null) {
+                    errMessage = ("Erreur: Des valeurs n'ont pas été entrées correctement.");
+                } else {
+                    try {
+                        double amountDouble = Double.parseDouble(amount);
+                        double converted = beanConv.euroToOtherCurrency(amountDouble, currency);
                         
-                        out.println("Add mail in queue...");
-                    // Demander au MDB de déclencher la demande de conversion
-                        // dans toutes les monnaies par le bean session
-                        // le MDB va ensuite envoyer un email avec toutes
-                        // ces informations au format HTML (dans un tableau HTML)
-                        // (voir plus loin ce que doivent faire les beans) ...
-
-                        Context jndiContext = new InitialContext();
-                        javax.jms.ConnectionFactory connectionFactory
-                                = (QueueConnectionFactory) jndiContext.lookup("jms/MailContentQueueFactory");
-
-                        Connection connection = connectionFactory.createConnection();
-                        Session sessionQ = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-
-                        TextMessage message = sessionQ.createTextMessage();
-                        message.setText(amount + "#" + email);
-
-                        javax.jms.Queue queue = (javax.jms.Queue) jndiContext.lookup("jms/MailContentQueue");
-
-                        MessageProducer messageProducer = sessionQ.createProducer(queue);
-                        messageProducer.send(message);
+                        if (amountDouble < 0) {
+                            throw new IllegalArgumentException();
+                        }
                         
-                        out.println("Done.");
-
-                    } else {
-                         out.println("Pas de mail entré.");
+                        // Affichage au client
+                        defaultConverted = ""+converted;
+                        defaultValue = amount;
+                        defaultCurrency = currency;
+                        
+                    } catch (Exception e) {
+                       errMessage = ("Erreur durant la conversion de '"+amount+"' en double.");
                     }
+                    
                 }
-            } else {
-                out.println("Debug : Pas d'entrée de formulaire");
+                
             }
-
+        %>   
+            
+        <%
+            // Liste des devises pour la liste déroulante du client
+            ArrayList<String> curencies = beanConv.getCurrenciesList();
         %>
 
-        <p>Liste des devises : http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml</p>
+        
+        <%
+            if (errMessage != null) {
+                %>
+                <div class="alert alert-danger">
+                    <% out.print(errMessage); %>
+                </div>
+                <%
+            }
+        %>
+            
         <form action="index.jsp">
-            Montant <input name="amount"><br>
-            Monnaie cible <input name="devise"><br>
-            Adresse email : <input name="email" type="email" />
-            <button type="submit" value="GO" />
+            <b>Montant</b> (en EUR) <input name="amount" type="number" value="<% out.print(defaultValue); %>">
+            
+            vers
+            <select name="currency">
+            <%
+                for (String sc : curencies) {
+                    out.println("<option value=\""+sc+"\" "+((sc.equals(defaultCurrency))?"selected=\"selected\"":"")+">"+sc+" "+beanConv.getFullNameMonay(sc)+"</option>");
+                }
+            %>
+            </select>
+            
+            <br> <br>
+            <input  class="btn btn-success btn-sm" type="submit" value="Convertir =>" name="submit" />
+            <input name="converted" type="number" disabled="disabled" value="<% out.print(defaultConverted); %>">
         </form>
+        
     </body>
 </html>
