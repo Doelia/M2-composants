@@ -79,3 +79,13 @@ Pas cours (férié)
         - Pour le MailerMDB, je n'ai pas réussi à créér un "jms/" avec "Project Destination". J'ai du créer deux modules depuis l'admin du serveur GlassFish :
             - jms/MailContentQueueFactory en Factory
             - jms/MailContentQueue en Destination Ressource
+
+### Séance 24/11
+- Intervenant M. Tibermacine n°2
+  - Suite et fin de ces 3 cours qu'il avait prévu
+- TP noté, envoyé par mail
+
+### Séance 2/12
+- Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Berger-Levrault, n°1
+- Cours général sur le contexte industriel : Pourquoi la réutilisablité ?
+  - Termes : Framework, approche, pratique, boite à outils, API, composant 
