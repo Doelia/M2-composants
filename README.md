@@ -95,6 +95,6 @@ Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Be
 - Cours général sur le contexte industriel : Pourquoi la réutilisablité ?
   - Termes : Framework, approche, pratique, boite à outils, API, composant
 - Annonce d'un TP à faire et à rendre, sujet donné à l'oral
-    - Fork du TP2 JEE
+    - Fork du TP3 JEE
 
 ![](http://i.prntscr.com/e3c0621774d844b088d9411678d54b46.png)
