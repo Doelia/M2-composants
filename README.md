@@ -54,6 +54,7 @@ Cours annulé, pas encore reporté.
 Pas cours
 
 ### Séance 04/11
+Avec Dony  
 - Cours de 1h30 sur [JEE](http://www.lirmm.fr/~dony/notesCours/cejb.pdf)
   - Amphi 6.01
   - Une feuille de note prise (résumé introduction sur les applis n tiers)
@@ -75,7 +76,23 @@ Pas cours (férié)
     - Début [Programmation par composants avec OSGi](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours2.pdf)
 - TP
     - Début TP2, commencé, codé mais pas testé
+        - But : envoyer par mail et ajouter des infos depuis un autre XML
         - Fork du TP1, projet netbeans
         - Pour le MailerMDB, je n'ai pas réussi à créér un "jms/" avec "Project Destination". J'ai du créer deux modules depuis l'admin du serveur GlassFish :
             - jms/MailContentQueueFactory en Factory
             - jms/MailContentQueue en Destination Ressource
+- Fait à la maison :
+    - TP3 : exercite 1 et 2, execrice 3 pas fait (c'est faire du clic clic pour générer une API)
+    - Une bonne partie du TP4
+
+### Séance 25/11
+Intervenant M. Tibermacine n°2
+- Cours de 1h30
+    - Fin [Programmation par composants avec OSGi](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours2.pdf)
+    - [Développement par plugins](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours3.pdf)
+- TP noté : exercice 2 (REST) du TP2
+
+### Séance 2/12
+Invervenant Mr. Laurent Deruelle, Dr. en informatique, Ingénieur à la société Berger-Levrault. 
+
+### Séance 9/12
