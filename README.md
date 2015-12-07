@@ -93,6 +93,8 @@ Intervenant M. Tibermacine n°2
 - TP noté : exercice 2 (REST) du TP2
 
 ### Séance 2/12
-Invervenant Mr. Laurent Deruelle, Dr. en informatique, Ingénieur à la société Berger-Levrault. 
-
-### Séance 9/12
+- Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Berger-Levrault, n°1
+- Cours général sur le contexte industriel : Pourquoi la réutilisablité ?
+  - Termes : Framework, approche, pratique, boite à outils, API, composant
+- Annonce d'un TP à faire et à rendre, sujet donné à l'oral
+    - Basé sur le TP2
