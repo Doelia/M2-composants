@@ -86,7 +86,7 @@ Intervenant M. Tibermacine n°1
 ### Séance 25/11
 Intervenant M. Tibermacine n°2
 - Cours de 1h30
-    - Fin [Programmation par composants avec OSGi](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours2.pdf)
+    - Suite et fin [Programmation par composants avec OSGi](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours2.pdf)
     - [Développement par plugins](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours3.pdf)
 - TP noté : exercice 2 (REST) du TP2
 
@@ -95,4 +95,6 @@ Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Be
 - Cours général sur le contexte industriel : Pourquoi la réutilisablité ?
   - Termes : Framework, approche, pratique, boite à outils, API, composant
 - Annonce d'un TP à faire et à rendre, sujet donné à l'oral
-    - Basé sur le TP2
+    - Fork du TP2 JEE
+
+![](http://i.prntscr.com/e3c0621774d844b088d9411678d54b46.png)
