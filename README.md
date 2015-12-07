@@ -31,16 +31,15 @@ Cours HMIN 304, Composants et reutilisation
 Cours annulé, pas encore reporté.
 
 ### Séance 07/10
-
+M. Dony
 - Cours de 1h30 sur NetBeans et la programmation orientée composants
 - TP NetBeans OK (création et utilisation de composants en interface graphique)
 	- Projet netbeans : netbeans/Appli1
 
 ### Séance 14/10
-
 - Cours de 1h30 sur [JAspect Java](http://www.lirmm.fr/~dony/notesCours/aspects.pdf)
   - Programmation orientée aspéects
-  - Cours manqué à 75%
+  - Cours manqué à 75%
 - (TP d'initiation à AspectJ](http://www.lirmm.fr/~dony/enseig/RC/TP-Aspects.pdf)
   - Configuration
     - Installation sous Eclipse Kepler
@@ -54,7 +53,7 @@ Cours annulé, pas encore reporté.
 Pas cours
 
 ### Séance 04/11
-Avec Dony  
+M. Dony  
 - Cours de 1h30 sur [JEE](http://www.lirmm.fr/~dony/notesCours/cejb.pdf)
   - Amphi 6.01
   - Une feuille de note prise (résumé introduction sur les applis n tiers)
@@ -68,9 +67,8 @@ Avec Dony
 Pas cours (férié)
 
 ### Séance 18/11
-- Annonce d'un TP noté qui sera relevé à la fin de la prochaine séance (voir mail)
-- Intervenant M. Tibermacine n°1
-    - - Support de cours/tp : http://www.lirmm.fr/~tibermacin/ens/gmin30f/
+Intervenant M. Tibermacine n°1
+- Support de cours/tp : http://www.lirmm.fr/~tibermacin/ens/gmin30f/
 - Cours de 1h30
     - [Programmation par composants avec Spring](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours1.pdf) OK
     - Début [Programmation par composants avec OSGi](http://www.lirmm.fr/~tibermacin/ens/gmin30f/cours/cours2.pdf)
@@ -93,7 +91,7 @@ Intervenant M. Tibermacine n°2
 - TP noté : exercice 2 (REST) du TP2
 
 ### Séance 2/12
-- Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Berger-Levrault, n°1
+Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Berger-Levrault, n°1
 - Cours général sur le contexte industriel : Pourquoi la réutilisablité ?
   - Termes : Framework, approche, pratique, boite à outils, API, composant
 - Annonce d'un TP à faire et à rendre, sujet donné à l'oral
