@@ -121,13 +121,13 @@ Intervenant Laurent Deruelle, n°1
     - Sérialisation
 
 ## Mémento des abrev. JEE
-JEE Java Entreprise éditon
-EJB Java Bean Entreprise
+- JEE Java Entreprise éditon
+- EJB Java Bean Entreprise
     - Type Session Bean
-JPA Poussé par hibernate (?)
-JMS Java Message Service. Le truc des boites aux lettres es jms:// dans lesquels on peut laisser des messages
-MDE Message Driven Bean. Un type de JBE que permet de récupérer des messages postés dans des JMS
-Servlet. permet de mettre de l'html dans du JAVA
-JSP Java Server Page. permet de mettre du java dans du HTML. Sera intégré comme une servlet ensuite
+- JPA Poussé par hibernate (?)
+- JMS Java Message Service. Le truc des boites aux lettres es jms:// dans lesquels on peut laisser des messages
+- MDE Message Driven Bean. Un type de JBE que permet de récupérer des messages postés dans des JMS
+- Servlet. permet de mettre de l'html dans du JAVA
+- JSP Java Server Page. permet de mettre du java dans du HTML. Sera intégré comme une servlet ensuite
 
-ORM object-relational mapping  : truc pour gérer la BD
+- ORM object-relational mapping  : truc pour gérer la BD
