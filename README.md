@@ -98,3 +98,18 @@ Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Be
     - Fork du TP3 JEE
 
 ![](http://i.prntscr.com/e3c0621774d844b088d9411678d54b46.png)
+
+### Séance 9/12
+Intervenant Laurent Deruelle, n°1
+- Cours général sur "Réutilisation et composants"
+    - Réutilisabilité passive vs. active
+    - Quelques régles en conception : SOLID
+        - S : Signe Responsibility Principe : Une seule resposonsablité pas class
+        - O : Open/closed principe : ouvert aux exentsions, efrmé aux modifications
+        - L : Design par contrat
+        - I : Plusieurs interfaces simple plutôt qu'une complexe
+        - D : Dépendendre des interfaces plutôt que des classes concrètes
+    - Intégration continue
+        - Tester régulièremenrt de façon automatique le programme : compilation, test unitaires...
+        - Détecter les anomalies lors de la phase où ils sont introduits
+        - 
