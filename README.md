@@ -49,7 +49,6 @@ M. Dony
 	 - Voir le fichier Helloaspects pour des exemples avec passage de paramètre
 
 ### Séance 21/10
-
 Pas cours
 
 ### Séance 04/11
@@ -96,6 +95,7 @@ Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Be
   - Termes : Framework, approche, pratique, boite à outils, API, composant
 - Annonce d'un TP à faire et à rendre, sujet donné à l'oral
     - Fork du TP3 JEE
+    - Pas à rendre finalement (annonce du 8/12)
 
 ![](http://i.prntscr.com/e3c0621774d844b088d9411678d54b46.png)
 
@@ -110,6 +110,24 @@ Intervenant Laurent Deruelle, n°1
         - I : Plusieurs interfaces simple plutôt qu'une complexe
         - D : Dépendendre des interfaces plutôt que des classes concrètes
     - Intégration continue
-        - Tester régulièremenrt de façon automatique le programme : compilation, test unitaires...
-        - Détecter les anomalies lors de la phase où ils sont introduits
-        - 
+        - "Processus d'assemblage et de vérification périodique et automatique"
+        - Tester régulièrement de façon automatique le programme : compilation, test unitaires...
+        - But : Détecter les anomalies lors de la phase où ils sont introduits
+        - Représente un investissement pour l'entreprise
+        - Note : la priorité d'un bug est relative à celui qui la relève
+    - Apache MAVEN
+        - Gestionnaire de dépendance
+        - Format XML
+    - Sérialisation
+
+## Mémento des abrev. JEE
+JEE Java Entreprise éditon
+EJB Java Bean Entreprise
+    - Type Session Bean
+JPA Poussé par hibernate (?)
+JMS Java Message Service. Le truc des boites aux lettres es jms:// dans lesquels on peut laisser des messages
+MDE Message Driven Bean. Un type de JBE que permet de récupérer des messages postés dans des JMS
+Servlet. permet de mettre de l'html dans du JAVA
+JSP Java Server Page. permet de mettre du java dans du HTML. Sera intégré comme une servlet ensuite
+
+ORM object-relational mapping  : truc pour gérer la BD
