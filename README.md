@@ -100,7 +100,7 @@ Intervenant Laurent Deruelle, Dr. en informatique, Ingénieur à la société Be
 ![](http://i.prntscr.com/e3c0621774d844b088d9411678d54b46.png)
 
 ### Séance 9/12
-Intervenant Laurent Deruelle, n°1
+Intervenant Laurent Deruelle, n°2
 - Cours général sur "Réutilisation et composants"
     - Réutilisabilité passive vs. active
     - Quelques régles en conception : SOLID
