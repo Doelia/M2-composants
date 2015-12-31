@@ -16,6 +16,9 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.MethodInvocation;
+import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 
 public class Parser {
 	
@@ -31,14 +34,80 @@ public class Parser {
 
 		//
 		for (File fileEntry : javaFiles) {
+			System.out.println("****************");
 			String content = FileUtils.readFileToString(fileEntry);
-			 System.out.println(content);
-
+			// System.out.println(content);
+			System.out.println("METHOD INFO");
 			CompilationUnit parse = parse(content.toCharArray());
+			// print methods info
+			printMethodInfo(parse);
+			
+			System.out.println("----------------");
+			
+			System.out.println("VARIABLE");
+			// print variables info
+			printVariableInfo(parse);
+			
+			System.out.println("----------------");
+						
+			System.out.println("METHOD INVOCATION INFO");
+			//print method invocations
+			printMethodInvocationInfo(parse);
 
 		}
 	}
+	
+	// navigate variables inside method
+	public static void printVariableInfo(CompilationUnit parse) {
 
+		MethodDeclarationVisitor visitor1 = new MethodDeclarationVisitor();
+		parse.accept(visitor1);
+		for (MethodDeclaration method : visitor1.getMethods()) {
+
+			VariableDeclarationFragmentVisitor visitor2 = new VariableDeclarationFragmentVisitor();
+			method.accept(visitor2);
+
+			for (VariableDeclarationFragment variableDeclarationFragment : visitor2
+					.getVariables()) {
+				System.out.println("variable name: "
+						+ variableDeclarationFragment.getName()
+						+ " variable Initializer: "
+						+ variableDeclarationFragment.getInitializer());
+			}
+
+		}
+	}
+	
+	
+	// navigate method invocations inside method
+			public static void printMethodInvocationInfo(CompilationUnit parse) {
+
+				MethodDeclarationVisitor visitor1 = new MethodDeclarationVisitor();
+				parse.accept(visitor1);
+				for (MethodDeclaration method : visitor1.getMethods()) {
+
+					MethodInvocationVisitor visitor2 = new MethodInvocationVisitor();
+					method.accept(visitor2);
+
+					for (MethodInvocation methodInvocation : visitor2.getMethods()) {
+						System.out.println("method " + method.getName() + " invoc method "
+								+ methodInvocation.getName());
+					}
+
+				}
+			}
+
+	public static void printMethodInfo(CompilationUnit parse) {
+		MethodDeclarationVisitor visitor = new MethodDeclarationVisitor();
+		parse.accept(visitor);
+
+		for (MethodDeclaration method : visitor.getMethods()) {
+			System.out.println("Method name: " + method.getName()
+					+ " Return type: " + method.getReturnType2());
+		}
+
+	}
+	
 	// read all java files from specific folder
 	public static ArrayList<File> listJavaFilesForFolder(final File folder) {
 		ArrayList<File> javaFiles = new ArrayList<File>();
@@ -46,7 +115,7 @@ public class Parser {
 			if (fileEntry.isDirectory()) {
 				javaFiles.addAll(listJavaFilesForFolder(fileEntry));
 			} else if (fileEntry.getName().contains(".java")) {
-				 System.out.println(fileEntry.getName());
+				// System.out.println(fileEntry.getName());
 				javaFiles.add(fileEntry);
 			}
 		}
