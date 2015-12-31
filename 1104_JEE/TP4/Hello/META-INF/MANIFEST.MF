@@ -1,0 +1,6 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: Hello
+Bundle-Name: Hello
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: hello.Activator
+Import-Package: org.osgi.framework
